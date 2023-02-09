@@ -1,0 +1,5 @@
+Enter the number of elements in the array: 
+Unsorted Array:
+100 90 76 70 84 86 50 87 66 2 
+Sorted array: 
+2 50 66 70 76 84 86 87 90 100 

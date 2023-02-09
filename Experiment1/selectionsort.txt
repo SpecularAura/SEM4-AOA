@@ -1,0 +1,6 @@
+Enter the number of elements in the array: 
+8
+100 90 80 70 40 23 21 10
+Bubble sort 
+The sorted array is:
+10 21 23 40 70 80 90 100
