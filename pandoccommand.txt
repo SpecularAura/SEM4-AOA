@@ -1,0 +1,2 @@
+pandoc .\Experiment2.md -o Experiment2PandocPython.pdf --highlight-style=tango 
+pandoc --lua-filter=..\include-code-files.lua .\Experiment5.md -o Experiment5.pdf --pdf-engine=xelatex --preserve-tabs
