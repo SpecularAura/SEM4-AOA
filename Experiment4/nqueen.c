@@ -4,7 +4,7 @@
 int x[N];
 int Place(int k, int i)
 {
-    for (int j = 0; j < k - 1; j++)
+    for (int j = 0; j <= k - 1; j++)
     {
         if(x[j] == i
             || abs(x[j] - i) == abs(j - k))
@@ -20,7 +20,7 @@ void NQueens(int k, int n)
     {
         if (Place(k, i) == 1)
         {
-            x[k] = 1;
+            x[k] = i;
             if(k == n - 1)
             {
                 for(int z = 0; z < n; z++)
