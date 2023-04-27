@@ -1,28 +1,31 @@
 #include <stdio.h>
 #define MAX 20
-#define INF __INT_MAX__
+#define INF __INT_MAX__ // Used to indicate no edge
+
 typedef struct adjMat {
-    int cost[MAX][MAX];
-    int n;
+    int cost[MAX][MAX]; // Adjacency Matrix
+    int n;              // No Of Vertices
 }adjMat;
+
 void floydWarshall(adjMat mat);
+
 int main()
 {
     adjMat mat = {
-        .cost = {
+        {
             { 0, 5, INF, 10 },
             { INF, 0, 3, INF },
             { INF, INF, 0, 1 },
             { INF, INF, INF, 0 }
-        },
-        .n = 4 
+        }, // Adjacency Matrix
+        4  // No Of Vertices
     };
     floydWarshall(mat);
 }
 
 void floydWarshall(adjMat mat)
 {
-    for(int k = 0; k < mat.n; k++ )
+    for(int k = 0; k < mat.n; k++)
     {
         for(int i = 0; i < mat.n; i++)
         {

@@ -8,6 +8,7 @@ int tsp(int G[][V]);
 int g(int i, Arr Set, int G[][V]);
 Arr remove_vertex(Arr Set, int k);
 Arr remove_start(Arr Set, int k, int l);
+
 int main(){
   int G[][V] = { { 0, 10, 15, 20 },
                        { 5, 0, 35, 10 },
@@ -32,6 +33,7 @@ int g(int i, Arr Set, int G[][V]){
   }
   return cost;
 }
+
 int tsp(int G[][V]){
   Arr Set;
   int cost = __INT_MAX__;
@@ -51,6 +53,7 @@ int tsp(int G[][V]){
   
   return cost;
 }
+
 Arr remove_start(Arr Set, int k, int l){
   int j = 0;
   Arr newSet;
@@ -66,6 +69,7 @@ Arr remove_start(Arr Set, int k, int l){
   }
   return newSet;
 }
+
 Arr remove_vertex(Arr Set, int k){
   int j = 0;
   Arr newSet;
