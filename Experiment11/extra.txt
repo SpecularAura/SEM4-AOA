@@ -1,0 +1,91 @@
+PI ComputePrefixFunctionNew(const char* pattern)
+{
+    int pt_length = strlen(pattern);
+    PI p;
+    int k = -1;
+    p.pi[0] = -1;
+    for(int i = 1; i < pt_length; i++)
+    {
+        while(k >= 0 && pattern[k + 1] != pattern[i])
+        {
+            k = p.pi[k];
+        }
+        if(pattern[k + 1] == pattern[i])
+        {
+            k = k + 1;
+        }
+        p.pi[i] = k;
+    }
+    printf("Executed Successfully\n");
+    return p;
+}
+
+void KMPNew(const char* pattern, const char* string)
+{
+    int pt_length = strlen(pattern);
+    int str_length = strlen(string);
+
+    PI p = ComputePrefixFunctionNew(pattern);
+
+    int noOfMatches = -1;
+
+    for(int i = 0; i < str_length; i++)
+    {
+        while(noOfMatches >= 0 && pattern[noOfMatches + 1] != string[i])
+        {
+            noOfMatches = p.pi[noOfMatches];
+        }
+        if(pattern[noOfMatches + 1] == string[i])
+        {
+            noOfMatches += 1;
+        }
+
+        if(noOfMatches == pt_length - 1)
+        {
+            printf("A Match Occurred at: %d\n", i - pt_length + 1);
+        }
+    }
+}
+
+void RabinKarp(const char* pattern, const char* string)
+{
+    int q = INT_MAX;
+    int pt_length = strlen(pattern);
+    int str_length = strlen(string);
+
+    int pow = 1;
+    int pt_hash = 0;
+    int str_hash = 0;
+
+    for(int i = 0; i < pt_length - 1; i++)
+    {
+        pow = (d * pow) % q;
+    }
+
+    for(int i = 0; i < pt_length; i++)
+    {
+        pt_hash = (d * pt_hash + pattern[i]) % q;
+        str_hash = (d * str_hash + string[i]) % q;
+    }
+
+    for(int i = 0; i < str_length - pt_length + 1; i++)
+    {
+        if(pt_hash == str_hash)
+        {
+            int j = 0;
+            for(j = 0; j < pt_length; j++)
+            {
+                if(string[i + j] != pattern[j])
+                {
+                    break;
+                }
+            }
+            if (j == pt_length)
+            {
+                printf("Pattern Matched at: %d\n", i);
+            }
+        }
+
+        str_hash = (d * (str_hash - pow * string[i]) + string[i + pt_length]) % q;
+    }
+}

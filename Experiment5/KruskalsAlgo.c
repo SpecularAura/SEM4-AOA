@@ -121,6 +121,7 @@ void print()
 
   printf("\nSpanning tree cost: %d", cost);
 }
+
 int main()
 {
   int i, j, total_cost;

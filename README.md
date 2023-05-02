@@ -12,8 +12,8 @@
 4. [Job Sequencing](./Experiment4/jobsequencing.c)
 ----
 5. Graph Based Algorithms:
-    1. [Prim's Algorithm](./Experiment5/PrimsAlgo.c)
-    2. [Kruskal's Algorithm](./Experiment5/KruskalsAlgo.c)
+    1. [Prim's Algorithm](./PracticalPractice/PrimsAlgo.c)
+    2. [Kruskal's Algorithm](./PracticalPractice/KruskalsAlgo.c)
     3. **EXTRA** [Dijikstra's Algorithm](./Experiment5/DijkstrasAlgo.c)
 ----
 6. Dynamic Programming:
@@ -26,6 +26,6 @@
 ----
 9. [N-Queens Problem](./Experiment9/nqueen.c)
 ----
-10. [Rabin Karp String Matching Algorithm](./README.md)
+10. [Rabin Karp String Matching Algorithm](./Experiment11/stringmatching.c)
 ---
-11. [KMP String Matching Algorithm](./README.md)
+11. [KMP String Matching Algorithm](./Experiment10/RabinKarp.c)

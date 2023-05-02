@@ -37,7 +37,7 @@ void jobSequencing(Job jobs[], int n)
     }
     for(int i = 0; i < n; i++)
     {
-        slot[i]  = 0;
+        slot[i] = 0;
     }
 
     for(int i = 0; i < n; i++)

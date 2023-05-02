@@ -42,11 +42,11 @@ int knapsack(Bag bags[],int noOfBags, int W)
     {
         for(int w = 1; w <= W; w++)
         {
-            if (bags[i].weight <= w)
+            if (bags[i - 1].weight <= w)
             {
                 knapSack[i][w] = max(
                     knapSack[i - 1][w],
-                    knapSack[i - 1][w - bags[i].weight] + bags[i].profit
+                    knapSack[i - 1][w - bags[i - 1].weight] + bags[i - 1].profit
                 );
             }
             else
@@ -61,8 +61,8 @@ int knapsack(Bag bags[],int noOfBags, int W)
     {
         if (knapSack[i-1][k] != knapSack[i][k])
         {
-            elements[bags[i].id] = 1;
-            k = k - bags[i].weight;
+            elements[bags[i - 1].id] = 1;
+            k = k - bags[i - 1].weight;
         }
         else
         {

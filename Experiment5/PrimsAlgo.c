@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdbool.h>
 #define INF 9999999
 // number of vertices in graph

@@ -1,40 +1,43 @@
 #include <stdio.h>
 #include <math.h>
-#define N 4
+#define N 9
 int x[N];
+void NQueens(int k, int n);
+int Place(int k, int i);
+int main()
+{
+    NQueens(0, N);
+}
+
 int Place(int k, int i)
 {
-    for (int j = 0; j <= k - 1; j++)
+    for (int j = 0; j < k; j++)
     {
-        if(x[j] == i
-            || abs(x[j] - i) == abs(j - k))
+        if (
+            x[j] == i ||
+            abs(j - k) == abs(x[j] - i)
+        )
         {
             return 0;
         }
     }
     return 1;
 }
+
 void NQueens(int k, int n)
 {
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if (Place(k, i) == 1)
+        if (Place(k, i))
         {
             x[k] = i;
-            if(k == n - 1)
+            if (k == n - 1)
             {
                 for (int k = 0; k < n; k++)
                 {
                     for (int j = 0; j < n; j++)
                     {
-                        if(j == x[k])
-                        {
-                            printf("x ");
-                        }
-                        else 
-                        {
-                            printf("o ");
-                        }
+                        printf("%c ", ((j == x[k]) ? 'x' : 'o'));
                     }
                     printf("\n");
                 }
@@ -42,13 +45,8 @@ void NQueens(int k, int n)
             }
             else
             {
-                NQueens(k+1, n);
+                NQueens(k + 1, n);
             }
         }
     }
-}
-
-int main()
-{
-    NQueens(0, N);
 }
